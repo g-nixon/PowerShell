@@ -1,0 +1,8 @@
+#File Move
+$sourceFolder = read-host "Please enter source Folder"
+$format = read-host "Format to look for"
+$destFolder = read-host "Destination Folder"
+Get-ChildItem -Path $sourceFolder -Filter $format -Recurse | Move-Item -Destination $destFolder -Whatif
+
+#Multiple File Delete
+get-childitem -path C:\test\ test* -recurse | remove-item  -force -whatif
